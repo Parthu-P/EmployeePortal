@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="www.tymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table class="table table-striped table-bordered table-hover"
+		id="enqTbl">
+		<thead>
+			<tr>
+				<th scope="col">S.No</th>
+				<th scope="col">Name</th>
+				<th scope="col">PhoneNumber</th>
+				<th scope="col">ClassMode</th>
+				<th scope="col">Course</th>
+				<th scope="col">Status</th>
+				<!-- <th scope="col">CreatedDate</th>
+												<th scope="col">LastDate</th> -->
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="viewEnquiries: ${enquiries}">
+				<td th:text="${viewEnquiriesStat.index}+1" />
+				<td th:text="${viewEnquiries.studentName}" />
+				<td th:text="${viewEnquiries.phNo}" />
+				<td th:text="${viewEnquiries.classMode}" />
+				<td th:text="${viewEnquiries.courseName}" />
+				<td th:text="${viewEnquiries.enquiryStatus}" />
+				<!-- <td th:text="${viewEnquiries.createdDate}" />
+												<td th:text="${viewEnquiries.updatedDate}" /> -->
+
+				<td><a href="addEnquiry" class="btn btn-primary">Edit</a></td>
+
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
